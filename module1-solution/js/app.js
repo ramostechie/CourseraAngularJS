@@ -3,12 +3,14 @@
 
     angular.module('LunchCheck', [])
 
-    .controller('LunchCheckController', function ($scope) {
+    .controller('LunchCheckController', LunchCheckController);
+
+    LunchCheckController.$inject = ['$scope'];
+    function LunchCheckController($scope) {
         $scope.items = "";
         $scope.itemsMessage = "";
         $scope.textboxStyle = "";
         $scope.messageStyle = "";
-
 
         $scope.displayMessage = function () {
             $scope.itemsMessage = buildMessage($scope.items);
@@ -19,7 +21,7 @@
             var totalItems = 0;
 
             for (var i = 0; i < totalItemsRaw.length; i++) {
-                if (!isEmptyEl(totalItemsRaw,i))
+                if (!isEmptyEl(totalItemsRaw, i))
                     totalItems += 1;
             }
 
@@ -40,6 +42,7 @@
         function isEmptyEl(array, i) {
             return !(array[i]);
         }
-    });
+
+    }
 
 })();
