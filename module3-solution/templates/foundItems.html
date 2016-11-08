@@ -1,0 +1,14 @@
+<ul ng-if="foundItems.length > 0">
+    <li ng-repeat="item in foundItems">
+        <h4><span class="label label-info">{{item.short_name}}</span> {{item.name}} <button class="btn btn-danger btn-sm" ng-click="onRemove({index: $index});">Don't want this one!</button></h4>
+         <p>{{item.description}}</p>
+    </li>
+</ul>
+<div class="alert alert-warning alert-dismissible" role="alert" ng-if="foundMsg !=='-1' && foundItems.length < 1 && foundMsg !=='All'">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Nothing found!</strong>
+</div>
+<div class="alert alert-danger alert-dismissible" role="alert" ng-if="foundMsg ==='All'">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>All removed!</strong>
+</div>
