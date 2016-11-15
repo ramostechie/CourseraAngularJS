@@ -15,10 +15,7 @@
                 foundItems: '<',
                 foundMsg: '<',
                 onRemove: '&'
-            },
-            //controller: NarrowItDownControllerDirective,
-            //controllerAs: 'list',
-            //bindToController: true
+            }
         };
 
         return ddo;
@@ -64,30 +61,12 @@
 
         };
 
-        //var promise = MenuSearchService.getMenuCategories();
-
-        //promise.then(function (response) {
-        //    menu.categories = response.data;
-        //})
-        //.catch(function (error) {
-        //    console.log("Something went terribly wrong.");
-        //});
-
     }
 
 
     MenuSearchService.$inject = ['$http', 'ApiBasePath'];
     function MenuSearchService($http, ApiBasePath) {
         var service = this;
-
-        //service.getMenuCategories = function () {
-        //    var response = $http({
-        //        method: "GET",
-        //        url: (ApiBasePath + "/categories.json")
-        //    });
-
-        //    return response;
-        //};
 
         service.getMatchedMenuItems = function (searchTerm) {
             var response = $http({
@@ -109,18 +88,6 @@
 
             return response;
         };
-
-        //service.getMenuForCategory = function (shortName) {
-        //    var response = $http({
-        //        method: "GET",
-        //        url: (ApiBasePath + "/menu_items.json"),
-        //        params: {
-        //            category: shortName
-        //        }
-        //    });
-
-        //    return response;
-        //};
 
     }
 
